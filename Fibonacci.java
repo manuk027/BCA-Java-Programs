@@ -1,23 +1,23 @@
-import java.util.Scanner;
-
-public class Fibonacci {
-    public static void main(String[] args) {
-        int a = 0, b = 1, c, n;
-        System.out.println("Enter the limit:");
-        Scanner s = new Scanner(System.in);
-        n = s.nextInt();
-        System.out.println("Fibonacci numbers up to " + n + ":");
-
-        if (n <= 0) {
-            System.out.println(a);
-        } else {
-            System.out.print(a + "\n" + b + "\n");
-            for (c = a + b; c <= n; c = a + b) {
-                System.out.print(c + "\n");
-                a = b;
-                b = c;
-            }
-        }
-        s.close();
-    }
+import java.io.*; 
+import java.util.Scanner; 
+public class Fibonacci 
+{ 
+public static void main(String args[]) 
+{ 
+int f=0, s=1, t; 
+Scanner sc = new Scanner(System.in); 
+System.out.print("Enter the limit : "); 
+int limit = sc.nextInt(); 
+System.out.print("\nFibonacci series upto the limit are "); 
+for(int i = 0; i <= limit; i++) 
+{ 
+if (f <= limit) 
+{ 
+System.out.print(" " + f); 
+t = f + s; 
+f = s; s = t; 
+}
+} 
+System.out.println(); 
+} 
 }
