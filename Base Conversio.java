@@ -1,48 +1,29 @@
-import java.util.Scanner;
-public class Numbers {
-    public static int baseBToDecimal(char input) {
-        if (input >= '0' && input <= '9') {
-            return Integer.parseInt(input + "");
-        } else {
-            return (int) (input - 'a') + 10;
-        }
-    }
-    public static char decimalToBaseB(int input) {
-        if (input >= 0 && input <= 9) {
-            String str = String.valueOf(input);
-            return str.charAt(0);
-        } else {
-            return (char) ('a' + (input - 10));
-        }
-    }
-    public static int toDecimal(String input, int base) {
-        int length = input.length(); 
-        int decimal = 0;
-        for (int placeValue = 0, index = length - 1; index >= 0; placeValue++, index--) {
-            decimal += baseBToDecimal(input.charAt(index)) * (int) (Math.pow(base, placeValue));
-        }
-        return decimal;
-    }
-    public static String toBaseB(int input, int base) {
-        String result = "";
-        while (input > 0) {
-            int remainder = input % base;
-            input = input / base;
-            result = decimalToBaseB(remainder) + result;
-        }
-        return result;
-    }
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter input base: ");
-        int inputBase = scanner.nextInt();
-        System.out.print("Enter number in input base: ");
-        String inputNumber = scanner.next();
-        System.out.print("Enter output base: ");
-        int outputBase = scanner.nextInt();
-        int decimal = toDecimal(inputNumber, inputBase);
-        String output = toBaseB(decimal, outputBase);
-        System.out.println("Result = " + output);
-        scanner.close();
-    }
+import java.io.*; 
+import java.util.Scanner; 
+public class BaseConversion{ 
+public static void main (String args[]) 
+{ 
+Scanner s = new Scanner(System.in); 
+System.out.print("Enter a base 10 number : "); 
+int n = s.nextInt(); 
+System.out.print("Choose the base to be converted "+"\n1. Binary\n2. Octal\n3. 
+Hexadecimal\n-> "); 
+short choice = s.nextShort(); 
+int base = (choice == 1) ? 2 : (choice == 2) ? 8 : (choice == 3) ? 16 : 0; 
+int num = n, count = 0; 
+char result[] = new char[15]; 
+do 
+{
+int rem = num % base; 
+int digit = '0' + rem; // ASCII conversion 
+if (digit > '9') 
+digit = digit + 7; // Adding 7 to reach alphabet section 
+result[count++] = (char)digit; 
+num /= base; // updation 
+} while (num != 0); 
+System.out.print("\nBase "+base+" equivalent of num "+n +" is "); 
+for (int i = count - 1; i >= 0; --i) 
+System.out.print(result[i]); 
+System.out.println(); 
+} 
 }
