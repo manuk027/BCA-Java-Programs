@@ -9,7 +9,7 @@ public class Factorial
     } 
     else 
     {  
-      return n * calculateFactorial(n – 1);  
+      return n * calculateFactorial(n - 1);  
     }
   }
 }
