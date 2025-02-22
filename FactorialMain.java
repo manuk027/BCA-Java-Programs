@@ -8,6 +8,7 @@ public class FactorialMain
     System.out.print("Enter a number to find its factorial: ");  
     int number = input.nextInt();  
     long factorial = Factorial.calculateFactorial(number);  
-    System.out.println("The factorial of " + number + " is: " + factorial);  input.close();  
+    System.out.println("The factorial of " + number + " is: " + factorial);  
+    input.close();  
   }
 }
