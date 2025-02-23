@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class ArithmeticExceptionHandling
 {
   public static void main(String[] args)
@@ -15,7 +16,7 @@ public class ArithmeticExceptionHandling
     }
     catch(ArithmeticException e)
     {
-      System.out.println("An ArithmeticException occured:" + e.getMessage());
+      System.out.println("An Arithmetic Exception occured:" + e.getMessage());
     }
     finally
     {
