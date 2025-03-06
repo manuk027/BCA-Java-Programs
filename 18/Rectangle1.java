@@ -4,7 +4,7 @@ import java.applet.*;
 public class Rectangle1 extends Applet
 {
   String a,b,c,d,e;
-  Color colr;
+  Color color;
   int x1,y1,x2,y2;
   StyleSheet s=new StyleSheet();
   public void init()
@@ -18,11 +18,11 @@ public class Rectangle1 extends Applet
     y1 = Integer.parseInt(b);
     x2 = Integer.parseInt(c);
     y2 = Integer.parseInt(d);
-    colr = s.stringToColor(e);
+    color = s.stringToColor(e);
   }
   public void paint(Graphics g)
   {
-    g.setColor(colr);
+    g.setColor(color);
     g.drawRect(x1,y1,x2,y2);
   }
 }
